@@ -1,16 +1,686 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="font-awesome.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="quizCreate.css">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="quizCreate.js" ></script>
     </head>
-    <body>
-        <nav class="navbar navbar-dark bg-primary">
-            <span> <h2>BAZINGA</h2></span>
-            <!-- Navbar content -->
-        </nav>
-        
+    <body class="ng-scope container">
+        <nav class="menubar">
+            <div class="heading" style="background: linear-gradient(rgb(71, 238, 5), rgb(209, 245, 4));">
+              <span> 
+                    <h2>Bazinga</h2>
+              </span>
+           </div> 
+       
+     </nav>
+        <div class="main-body ng-scope"  ng-controller = "createQuiz">
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 1
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Which is harsh's Birthday month?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 2
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What's Your Favorite Color?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 3
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What is Your Favorite Season?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 4
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What Do You Do at Parties?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 5
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Which Would Be Your Go-To First Date?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 6
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What's Your Favorite Kind of Vacation?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 7
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Which Color Looks Best On You?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 8
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What does test like to do in free time?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 9
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What is test’s favorite sport?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+
+
+
+
+            <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
+
+                <h1 class="question-heading ng-binding">
+                    Question 10
+                </h1>
+                <div class="triangle-up"></div>
+
+                    <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
+                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Who is test's favorite superhero?</textarea>
+                </div>
+                
+                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">January</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">Feburary</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">March</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+
+                    <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                            <label class="radio-container">
+                                <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
+                                <span class="checkmark"></span>
+                            </label> 
+                        </div>
+                        <textarea maxlength="56" spellcheck="false" type="text" class="form-control textarea-form textarea-form-user ng-binding" rows="1" cols="60" name="text_option_0[0]" placeholder="Add an option">April</textarea>
+                        <span class="option_remove_icon" data-question="0" onclick="delete_option(this)">×</span>
+                    </div>
+                </div>
+                <button type="button" class="btn add-button nowrap" data-question="0" id="add_options_0" data-key="4" onclick="create_option(this)">
+                    Add an option                </button>
+                                               
+            </div>
+        </div>
     </body>
 </html>
