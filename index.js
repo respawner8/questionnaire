@@ -2,6 +2,7 @@ const express=require('express')
 const mongoose=require('mongoose')
 const parser=require('body-parser')
 const morgan=require('morgan')
+const path = reqire('path')
 const app=express();
 const port=3000;
 
@@ -9,6 +10,7 @@ const port=3000;
 mongoose.connect("mongodb+srv://respawner:Hello%40kubuntu@questionnaire-2ydel.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true, useUnifiedTopology: true},function(err){
     if(err)
     {
+        console.log(err);
         console.log("mongoose not connected");
     }
     else{
@@ -16,8 +18,8 @@ mongoose.connect("mongodb+srv://respawner:Hello%40kubuntu@questionnaire-2ydel.mo
     }
 })
 
-const user=require('./routes/user.js')
-
+const user=require('./routes/user.js');
+const quiz=require('./routes/quiz.js');
 
 app.use(morgan('dev'));
 app.use(parser.json());
@@ -31,6 +33,8 @@ app.use("*",function(req,res,next){
 
 
 app.use('/user',user);
+app.use('/quiz',quiz);
+
 
 
 app.listen(port,function(){

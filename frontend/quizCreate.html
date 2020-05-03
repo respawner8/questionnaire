@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="quizCreate.css">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="quizCreate.js" ></script>
     </head>
     <body class="ng-scope container">
 
@@ -20,7 +20,9 @@
         </nav>
 
 
-        <div class="main-body ng-scope"  ng-controller = "createQuiz">
+        <div class="main-body ng-scope"  ng-controller = "createQuiz" id="quizHTML">
+            <div class="form-group" id="userDesc"> </div>
+            <button type="button" class="btn btn-primary">See Responses</button><br><br>
             <div class="question-card" id="question-card-0" themeid="9" style="background: linear-gradient(rgb(26, 9, 172), rgb(47, 241, 248));">
 
                 <h1 class="question-heading ng-binding">
@@ -29,14 +31,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Which is harsh's Birthday month?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question1" placeholder="Add a Question">Which is harsh's Birthday month?</textarea>
                 </div>
                 
                 <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(1 , 1 , this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -47,7 +49,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(1 , 2, this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -58,7 +60,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(1, 3 ,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -69,7 +71,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(1, 4 ,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -95,14 +97,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What's Your Favorite Color?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question2" placeholder="Add a Question">What's Your Favorite Color?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_1" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(2 , 1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -113,7 +115,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(2, 2 ,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -124,7 +126,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(2, 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -135,7 +137,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(2, 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -161,14 +163,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What is Your Favorite Season?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question3" placeholder="Add a Question">What is Your Favorite Season?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_2" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(3, 1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -179,7 +181,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(3, 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -190,7 +192,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(3, 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -201,7 +203,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(3, 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -228,14 +230,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What Do You Do at Parties?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question4" placeholder="Add a Question">What Do You Do at Parties?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_3" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(4 ,1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -246,7 +248,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(4, 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -257,7 +259,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(4, 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -268,7 +270,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(4, 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -295,14 +297,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Which Would Be Your Go-To First Date?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question5" placeholder="Add a Question">Which Would Be Your Go-To First Date?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_4" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(5 ,1 ,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -313,7 +315,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(5 , 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -324,7 +326,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(5 , 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -335,7 +337,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(5 , 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -362,14 +364,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What's Your Favorite Kind of Vacation?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question6" placeholder="Add a Question">What's Your Favorite Kind of Vacation?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_5" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(6 ,1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -380,7 +382,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(6 ,2 ,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -391,7 +393,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(6 , 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -402,7 +404,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(6, 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -429,14 +431,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Which Color Looks Best On You?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question7" placeholder="Add a Question">Which Color Looks Best On You?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_6" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(7 , 1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -447,7 +449,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(7 , 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -458,7 +460,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(7 , 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -469,7 +471,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(7 , 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -496,14 +498,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What does test like to do in free time?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question8" placeholder="Add a Question">What does test like to do in free time?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_7" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(8 , 1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -514,7 +516,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(8 , 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -525,7 +527,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(8 , 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -536,7 +538,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(8 , 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -563,14 +565,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">What is test’s favorite sport?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question9" placeholder="Add a Question">What is test’s favorite sport?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_8" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(9 , 1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -581,7 +583,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(9 , 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -592,7 +594,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(9 , 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -603,7 +605,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(9 , 4,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -629,14 +631,14 @@
                 <div class="triangle-up"></div>
 
                     <div class="question-text" questionid="491" orgquestion="Which is test’s Birthday month?">
-                    <textarea class="form-control ng-binding" rows="2" name="question_0" placeholder="Add a Question">Who is test's favorite superhero?</textarea>
+                    <textarea class="form-control ng-binding" rows="2" id="question10" placeholder="Add a Question">Who is test's favorite superhero?</textarea>
                 </div>
                 
-                <div class="option_enclosure" id="option_enclosure_0" data-counter="5" data-question="0">
+                <div class="option_enclosure" id="option_enclosure_9" data-counter="5" data-question="0">
 
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(10 , 1,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -647,7 +649,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(10 , 2,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -658,7 +660,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(10 , 3,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -669,7 +671,7 @@
                     </div>
 
                     <div class="input-group ng-scope" ng-repeat="(key,option) in question.options">
-                        <div class="input-group-text" data-question="0" onclick="select_answer(event,this)">
+                        <div class="input-group-text" data-question="0" onclick="select_answer(10 , 4 ,this)">
                             <label class="radio-container">
                                 <input type="radio" name="option_0" class="option-input radio" autocomplete="off" value="0"> 
                                 <span class="checkmark"></span>
@@ -683,6 +685,9 @@
                     Add an option                </button>
                                                
             </div>
+            <div id="wrong"></div><br>
+            <button type="button" class="btn btn-primary" onclick="createQuiz()">Submit</button>
         </div>
+        <script src="quizCreate.js" ></script>
     </body>
 </html>
