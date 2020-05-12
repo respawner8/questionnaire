@@ -34,8 +34,8 @@ var port = 3000 ;
                                 localStorage.setItem("email" , email);
                                 localStorage.setItem("status" , "2");
                             }
-
-                        window.open("quizCreate.html" , "_self");
+                        //console.log("hello there");
+                        window.open(`http://localhost:${port}/quizCreate` , "_self");
                     })
                     .catch(function(error){
                         console.log(error);

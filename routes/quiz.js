@@ -3,10 +3,11 @@ const router = express.Router();
 const mongoose=require('mongoose');
 const quizModel=require('../models/quizModel.js')
 
-router.get('/', function(req,res){
-    const email=req.body.email;
+router.get('/:hash', function(req,res){
+    hash = req.params.hash;
+    //console.log(hash);
     quizModel.findOne({
-        email:email
+        _id : hash
     })
     .exec()
     .then(quiz=>{
@@ -50,11 +51,11 @@ router.post('/',function(req,res){
     .then(quiz=>{
         if(quiz.length>0)
             {
-                res.json({"status" : "0"});
+                res.json({ "status" : "0"});
             }
         else{
             newQuiz.save();
-            res.json({"status" : "1"});
+            res.json({"hash" : newQuiz._id , "status" : "1"});
         }
     })
 })

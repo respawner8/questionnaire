@@ -159,6 +159,9 @@ var answer10 = 0;
                         answer10 :answer10
                     }).then(res=>{
                         console.log("Quiz submitted");
+                        console.log(res);
+                        localStorage.setItem("hash" , res.data.hash);
+                        window.open(`http://localhost:${port}/linkShare` , "_self");
                     }).catch(err=>{
                         console.log(err);
                     })
