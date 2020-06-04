@@ -27,8 +27,7 @@ const userSchema= mongoose.Schema({
     answer7:{type: Number, required: true},
     answer8:{type: Number, required: true},
     answer9:{type: Number, required: true},
-    answer10:{type: Number, required: true}
-    
+    answer10:{type: Number, required: true},
 
 })
 module.exports=mongoose.model('quiz',userSchema);

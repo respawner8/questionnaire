@@ -20,6 +20,7 @@ mongoose.connect("mongodb+srv://respawner:Hello%40kubuntu@questionnaire-2ydel.mo
 
 const user=require('./routes/user.js');
 const quiz=require('./routes/quiz.js');
+const answer=require('./routes/answer.js');
 
 app.use(morgan('dev'));
 app.use(parser.json());
@@ -34,6 +35,7 @@ app.use("*",function(req,res,next){
 
 app.use('/user',user);
 app.use('/quiz',quiz);
+app.use('/answerr',answer)
 
 app.get('/' , function(req , res) { 
     res.sendFile('index.html' , {root : path.join(__dirname , 'frontend/')});  
